@@ -1,5 +1,8 @@
 var socket = io.connect("http://localhost:5000", { forceNew: true });
 
+var resultado = document.getElementById("resultado");
+    resultado.innerHTML="El interruptor ha cambiado";
+
 socket.on('connect', function(bolsillo){
     socket.emit("new-message", "Conexión establecida con página web");
     console.log(socket.id);
@@ -8,10 +11,8 @@ socket.on('connect', function(bolsillo){
 //recibiendo mensajes del servidor
 socket.on("messages", function (data) {
     console.log(data);
+    resultado.innerHTML = data;
 });
-
-var resultado = document.getElementById("resultado");
-    resultado.innerHTML="El interruptor ha cambiado";
 
 
 interruptor.addEventListener('change', function(e){
