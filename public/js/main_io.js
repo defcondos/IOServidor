@@ -1,5 +1,5 @@
 //var socket = io.connect("http://localhost:5000", { forceNew: true });
-var socket = io.connect("https://ioservidor.onrender.com:5000", {secure: true, rejectUnauthorized: false});
+var socket = io.connect("https://ioservidor.onrender.com", {secure: true, rejectUnauthorized: false});
 
 var resultado = document.getElementById("resultado");
     resultado.innerHTML="El interruptor está listo";
