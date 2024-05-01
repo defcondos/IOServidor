@@ -2,7 +2,7 @@
 var socket = io.connect("https://ioservidor.onrender.com:5000", {secure: true, rejectUnauthorized: false});
 
 var resultado = document.getElementById("resultado");
-    resultado.innerHTML="El interruptor ha cambiado";
+    resultado.innerHTML="El interruptor está listo";
 
 socket.on('connect', function(bolsillo){
     socket.emit("new-message", "Conexión establecida con página web");
